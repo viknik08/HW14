@@ -8,11 +8,19 @@
 import UIKit
 
 class AlbumsTabBar: UIViewController {
+    
+//MARK: - Outlets
+    
+//MARK: - LifeCycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .green
 
     }
+    
+//MARK: - Setup
 
 }
+
+//MARK: - Extension DataSource + Delegate
