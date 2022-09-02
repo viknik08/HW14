@@ -13,7 +13,7 @@ class AlbumsTabBar: UIViewController {
 //MARK: - Outlets
     
     private lazy var collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
+        let layout = creatLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(CompositionViewCell.self, forCellWithReuseIdentifier: CompositionViewCell.identifier)
         collectionView.dataSource = self
@@ -43,18 +43,74 @@ class AlbumsTabBar: UIViewController {
             make.top.left.right.bottom.equalTo(view)
         }
     }
+    
+    private func creatLayout() -> UICollectionViewCompositionalLayout {
+        
+        return UICollectionViewCompositionalLayout { sectionIndex, _ in
+            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                                  heightDimension: .fractionalHeight(1))
+            let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
+            
+            layoutItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
+            
+            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1 / 2 ),
+                                                   heightDimension: .fractionalHeight(1 / 2 ))
+            
+            let layoutGroup = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: layoutItem, count: 2)
+            
+            layoutGroup.interItemSpacing = NSCollectionLayoutSpacing.fixed(5)
+            layoutGroup.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 2.5, bottom: 0, trailing: 2.5)
+            
+            let sectionLayout = NSCollectionLayoutSection(group: layoutGroup)
+            sectionLayout.orthogonalScrollingBehavior = .groupPaging
+            return sectionLayout
+        }
+    }
 }
 
 //MARK: - Extension DataSource + Delegate
 extension AlbumsTabBar: UICollectionViewDataSource, UICollectionViewDelegate {
     
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        4
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        
+        switch section {
+        case 0:
+            return 10
+        case 1:
+            return 10
+        case 2:
+            return 9
+        case 3:
+            return 3
+        default:
+            return 3
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let item = collectionView.dequeueReusableCell(withReuseIdentifier: CompositionViewCell.identifier, for: indexPath)
-        return item
+        
+        switch indexPath.section {
+        case 0:
+            let item = collectionView.dequeueReusableCell(withReuseIdentifier: CompositionViewCell.identifier, for: indexPath)
+            return item
+        case 1:
+            let item = collectionView.dequeueReusableCell(withReuseIdentifier: CompositionViewCell.identifier, for: indexPath)
+            return item
+        case 2:
+            let item = collectionView.dequeueReusableCell(withReuseIdentifier: CompositionViewCell.identifier, for: indexPath)
+            return item
+        case 3:
+            let item = collectionView.dequeueReusableCell(withReuseIdentifier: CompositionViewCell.identifier, for: indexPath)
+            return item
+        default:
+            let item = collectionView.dequeueReusableCell(withReuseIdentifier: CompositionViewCell.identifier, for: indexPath)
+            return item
+        }
+
     }
 }
 
