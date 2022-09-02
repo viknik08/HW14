@@ -108,8 +108,6 @@
 			children = (
 				BEEBF3EB28C1D79A00B9D46D /* CollectionView */,
 				BEEBF3E728C1D67400B9D46D /* TabBarControllers */,
-				BEEBF3E628C0F07E00B9D46D /* Items */,
-				BEEBF3D128C0EDC800B9D46D /* ViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -118,7 +116,8 @@
 			isa = PBXGroup;
 			children = (
 			);
-			path = Items;
+			name = Items;
+			path = ../Items;
 			sourceTree = "<group>";
 		};
 		BEEBF3E728C1D67400B9D46D /* TabBarControllers */ = {
@@ -136,6 +135,8 @@
 		BEEBF3EB28C1D79A00B9D46D /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				BEEBF3D128C0EDC800B9D46D /* ViewController.swift */,
+				BEEBF3E628C0F07E00B9D46D /* Items */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
