@@ -17,21 +17,21 @@ class TabBarViewController: UITabBarController {
     }
     
     func setupTabBarController() {
-        tabBar.tintColor = .black
+        tabBar.tintColor = .systemBlue
         tabBar.backgroundColor = .white
     }
     
     func setupTabBarViewController() {
         let first = LabraryTabBar()
-        let firstTabItem = UITabBarItem(title: "Labrary", image: UIImage(systemName: "photo.on.rectangle"), selectedImage: UIImage(systemName: "photo.on.rectangle.fill"))
+        let firstTabItem = UITabBarItem(title: "Labrary", image: UIImage(systemName: "photo.on.rectangle.fill"), selectedImage: UIImage(systemName: "photo.on.rectangle.fill"))
         first.tabBarItem = firstTabItem
         
         let second = ForYouTabBar()
-        let secondTabItem = UITabBarItem(title: "For You", image: UIImage(systemName: "person.crop.rectangle.stack"), selectedImage: UIImage(systemName: "person.crop.rectangle.stack.fill"))
+        let secondTabItem = UITabBarItem(title: "For You", image: UIImage(systemName: "person.crop.rectangle.stack.fill"), selectedImage: UIImage(systemName: "person.crop.rectangle.stack.fill"))
         second.tabBarItem = secondTabItem
         
         let third = AlbumsTabBar()
-        let thirdTabItem = UITabBarItem(title: "Albums", image: UIImage(systemName: "rectangle.stack"), selectedImage: UIImage(systemName: "rectangle.stack.fill"))
+        let thirdTabItem = UITabBarItem(title: "Albums", image: UIImage(systemName: "rectangle.stack.fill"), selectedImage: UIImage(systemName: "rectangle.stack.fill"))
         third.tabBarItem = thirdTabItem
         
         let four = SearchTabBar()
