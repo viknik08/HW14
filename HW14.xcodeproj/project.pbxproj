@@ -9,20 +9,21 @@
 /* Begin PBXBuildFile section */
 		BEEBF3CE28C0EDC800B9D46D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBF3CD28C0EDC800B9D46D /* AppDelegate.swift */; };
 		BEEBF3D028C0EDC800B9D46D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBF3CF28C0EDC800B9D46D /* SceneDelegate.swift */; };
-		BEEBF3D228C0EDC800B9D46D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBF3D128C0EDC800B9D46D /* ViewController.swift */; };
+		BEEBF3D228C0EDC800B9D46D /* CompositionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBF3D128C0EDC800B9D46D /* CompositionViewCell.swift */; };
 		BEEBF3D728C0EDCA00B9D46D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEEBF3D628C0EDCA00B9D46D /* Assets.xcassets */; };
 		BEEBF3EA28C1D6D000B9D46D /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBF3E928C1D6D000B9D46D /* TabBarViewController.swift */; };
 		BEEBF3ED28C1D7D500B9D46D /* LabraryTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBF3EC28C1D7D500B9D46D /* LabraryTabBar.swift */; };
 		BEEBF3EF28C1D7F400B9D46D /* ForYouTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBF3EE28C1D7F400B9D46D /* ForYouTabBar.swift */; };
 		BEEBF3F128C1D80900B9D46D /* AlbumsTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBF3F028C1D80900B9D46D /* AlbumsTabBar.swift */; };
 		BEEBF3F328C1D83000B9D46D /* SearchTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBF3F228C1D83000B9D46D /* SearchTabBar.swift */; };
+		BEEBF3F628C1E04C00B9D46D /* HeaderCompositionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBF3F528C1E04C00B9D46D /* HeaderCompositionCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BEEBF3CA28C0EDC800B9D46D /* HW14.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HW14.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEEBF3CD28C0EDC800B9D46D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEEBF3CF28C0EDC800B9D46D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BEEBF3D128C0EDC800B9D46D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BEEBF3D128C0EDC800B9D46D /* CompositionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionViewCell.swift; sourceTree = "<group>"; };
 		BEEBF3D628C0EDCA00B9D46D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BEEBF3DB28C0EDCA00B9D46D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEEBF3E928C1D6D000B9D46D /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -30,6 +31,7 @@
 		BEEBF3EE28C1D7F400B9D46D /* ForYouTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForYouTabBar.swift; sourceTree = "<group>"; };
 		BEEBF3F028C1D80900B9D46D /* AlbumsTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsTabBar.swift; sourceTree = "<group>"; };
 		BEEBF3F228C1D83000B9D46D /* SearchTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTabBar.swift; sourceTree = "<group>"; };
+		BEEBF3F528C1E04C00B9D46D /* HeaderCompositionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCompositionCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,12 +114,13 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		BEEBF3E628C0F07E00B9D46D /* Items */ = {
+		BEEBF3E628C0F07E00B9D46D /* CompositionCell */ = {
 			isa = PBXGroup;
 			children = (
+				BEEBF3D128C0EDC800B9D46D /* CompositionViewCell.swift */,
 			);
-			name = Items;
-			path = ../Items;
+			name = CompositionCell;
+			path = ../CompositionCell;
 			sourceTree = "<group>";
 		};
 		BEEBF3E728C1D67400B9D46D /* TabBarControllers */ = {
@@ -135,10 +138,18 @@
 		BEEBF3EB28C1D79A00B9D46D /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				BEEBF3D128C0EDC800B9D46D /* ViewController.swift */,
-				BEEBF3E628C0F07E00B9D46D /* Items */,
+				BEEBF3E628C0F07E00B9D46D /* CompositionCell */,
+				BEEBF3F428C1DF9F00B9D46D /* HeaderCompositionCell */,
 			);
 			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		BEEBF3F428C1DF9F00B9D46D /* HeaderCompositionCell */ = {
+			isa = PBXGroup;
+			children = (
+				BEEBF3F528C1E04C00B9D46D /* HeaderCompositionCell.swift */,
+			);
+			path = HeaderCompositionCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,8 +225,9 @@
 				BEEBF3ED28C1D7D500B9D46D /* LabraryTabBar.swift in Sources */,
 				BEEBF3EA28C1D6D000B9D46D /* TabBarViewController.swift in Sources */,
 				BEEBF3EF28C1D7F400B9D46D /* ForYouTabBar.swift in Sources */,
-				BEEBF3D228C0EDC800B9D46D /* ViewController.swift in Sources */,
+				BEEBF3D228C0EDC800B9D46D /* CompositionViewCell.swift in Sources */,
 				BEEBF3CE28C0EDC800B9D46D /* AppDelegate.swift in Sources */,
+				BEEBF3F628C1E04C00B9D46D /* HeaderCompositionCell.swift in Sources */,
 				BEEBF3D028C0EDC800B9D46D /* SceneDelegate.swift in Sources */,
 				BEEBF3F128C1D80900B9D46D /* AlbumsTabBar.swift in Sources */,
 			);
