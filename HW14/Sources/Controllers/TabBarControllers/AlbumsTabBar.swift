@@ -16,6 +16,7 @@ class AlbumsTabBar: UIViewController {
         let layout = creatLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(CompositionViewCell.self, forCellWithReuseIdentifier: CompositionViewCell.identifier)
+        collectionView.register(CompositionTableViewCell.self, forCellWithReuseIdentifier: CompositionTableViewCell.identifier)
         collectionView.dataSource = self
         collectionView.delegate = self
         return collectionView
@@ -152,11 +153,11 @@ extension AlbumsTabBar: UICollectionViewDataSource, UICollectionViewDelegate {
             item.backgroundColor = .gray
             return item
         case 2:
-            let item = collectionView.dequeueReusableCell(withReuseIdentifier: CompositionViewCell.identifier, for: indexPath)
+            let item = collectionView.dequeueReusableCell(withReuseIdentifier: CompositionTableViewCell.identifier, for: indexPath)
             item.backgroundColor = .red
             return item
         default:
-            let item = collectionView.dequeueReusableCell(withReuseIdentifier: CompositionViewCell.identifier, for: indexPath)
+            let item = collectionView.dequeueReusableCell(withReuseIdentifier: CompositionTableViewCell.identifier, for: indexPath)
             item.backgroundColor = .red
             return item
         }
