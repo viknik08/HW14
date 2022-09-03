@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 class AlbumsTabBar: UIViewController {
-    
+        
 //MARK: - Outlets
     
     private lazy var collectionView: UICollectionView = {
@@ -31,7 +31,6 @@ class AlbumsTabBar: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         setupHierarhy()
         setupLayout()
-
     }
     
 //MARK: - Setup
@@ -53,14 +52,13 @@ class AlbumsTabBar: UIViewController {
             switch sectionIndex {
             case 0:
                 let layoutSectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
-                                                              heightDimension: .estimated(50))
+                                                              heightDimension: .estimated(60))
                 let layoutSectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: layoutSectionHeaderSize,
                                                                                       elementKind: UICollectionView.elementKindSectionHeader,
                                                                                       alignment: .top)
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
                                                       heightDimension: .fractionalWidth(1))
                 let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
-                
                 layoutItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 60, trailing: 5)
                 
                 let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1 / 2 ),
@@ -78,7 +76,7 @@ class AlbumsTabBar: UIViewController {
                 
             case 1:
                 let layoutSectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
-                                                              heightDimension: .estimated(50))
+                                                              heightDimension: .estimated(60))
                 let layoutSectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: layoutSectionHeaderSize,
                                                                                       elementKind: UICollectionView.elementKindSectionHeader,
                                                                                       alignment: .top)
@@ -100,7 +98,7 @@ class AlbumsTabBar: UIViewController {
 
             case 2:
                 let layoutSectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
-                                                              heightDimension: .estimated(50))
+                                                              heightDimension: .estimated(60))
                 let layoutSectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: layoutSectionHeaderSize,
                                                                                       elementKind: UICollectionView.elementKindSectionHeader,
                                                                                       alignment: .top)
@@ -121,7 +119,7 @@ class AlbumsTabBar: UIViewController {
                 
             default:
                 let layoutSectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
-                                                              heightDimension: .estimated(50))
+                                                              heightDimension: .estimated(60))
                 let layoutSectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: layoutSectionHeaderSize,
                                                                                       elementKind: UICollectionView.elementKindSectionHeader,
                                                                                       alignment: .top)
@@ -139,7 +137,6 @@ class AlbumsTabBar: UIViewController {
                 sectionLayout.boundarySupplementaryItems = [layoutSectionHeader]
                 return sectionLayout
             }
-
         }
     }
 }
@@ -148,41 +145,31 @@ class AlbumsTabBar: UIViewController {
 extension AlbumsTabBar: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        4
+        return Settings.settingsArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        switch section {
-        case 0:
-            return 10
-        case 1:
-            return 10
-        case 2:
-            return 9
-        default:
-            return 3
-        }
+        return Settings.settingsArray[section].count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         switch indexPath.section {
         case 0:
-            let item = collectionView.dequeueReusableCell(withReuseIdentifier: CompositionViewCell.identifier, for: indexPath)
-            item.backgroundColor = .green
+            let item = collectionView.dequeueReusableCell(withReuseIdentifier: CompositionViewCell.identifier, for: indexPath) as! CompositionViewCell
+            item.configuration(model: Settings.settingsArray[indexPath.section][indexPath.item])
             return item
         case 1:
-            let item = collectionView.dequeueReusableCell(withReuseIdentifier: CompositionViewCell.identifier, for: indexPath)
-            item.backgroundColor = .gray
+            let item = collectionView.dequeueReusableCell(withReuseIdentifier: CompositionViewCell.identifier, for: indexPath) as! CompositionViewCell
+            item.configuration(model: Settings.settingsArray[indexPath.section][indexPath.item])
             return item
         case 2:
-            let item = collectionView.dequeueReusableCell(withReuseIdentifier: CompositionTableViewCell.identifier, for: indexPath)
-//            item.backgroundColor = .red
+            let item = collectionView.dequeueReusableCell(withReuseIdentifier: CompositionTableViewCell.identifier, for: indexPath) as! CompositionTableViewCell
+            item.configuration(model: Settings.settingsArray[indexPath.section][indexPath.item])
             return item
         default:
-            let item = collectionView.dequeueReusableCell(withReuseIdentifier: CompositionTableViewCell.identifier, for: indexPath)
-//            item.backgroundColor = .red
+            let item = collectionView.dequeueReusableCell(withReuseIdentifier: CompositionTableViewCell.identifier, for: indexPath) as! CompositionTableViewCell
+            item.configuration(model: Settings.settingsArray[indexPath.section][indexPath.item])
             return item
         }
     }
@@ -210,7 +197,6 @@ extension AlbumsTabBar: UICollectionViewDataSource, UICollectionViewDelegate {
             header.rightButton.isHidden = true
             return header
         }
-
     }
 }
 

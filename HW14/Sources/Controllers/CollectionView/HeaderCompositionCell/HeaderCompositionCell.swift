@@ -12,11 +12,13 @@ class HeaderCompositionCell: UICollectionReusableView {
     static let identifier = "HeaderCompositionCell"
 
 //MARK: - Outlets
+    
     private let view: UIView = {
         let view = UIView()
         view.backgroundColor = .gray
         return view
     }()
+    
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Header"
@@ -52,6 +54,7 @@ class HeaderCompositionCell: UICollectionReusableView {
         addSubview(titleLabel)
         addSubview(rightButton)
     }
+    
     private func setupLayout() {
         titleLabel.snp.makeConstraints { make in
             make.left.equalTo(self).offset(10)
