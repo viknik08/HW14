@@ -113,7 +113,7 @@ class AlbumsTabBar: UIViewController {
                                                        heightDimension: .absolute(44))
                 
                 let layoutGroup = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [layoutItem])
-                layoutGroup.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 5)
+                layoutGroup.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 0)
                 let sectionLayout = NSCollectionLayoutSection(group: layoutGroup)
                 sectionLayout.boundarySupplementaryItems = [layoutSectionHeader]
                 sectionLayout.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 0)
@@ -134,7 +134,7 @@ class AlbumsTabBar: UIViewController {
                                                        heightDimension: .absolute(44))
                 
                 let layoutGroup = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [layoutItem])
-                layoutGroup.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 5)
+                layoutGroup.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 0)
                 let sectionLayout = NSCollectionLayoutSection(group: layoutGroup)
                 sectionLayout.boundarySupplementaryItems = [layoutSectionHeader]
                 return sectionLayout
@@ -178,11 +178,11 @@ extension AlbumsTabBar: UICollectionViewDataSource, UICollectionViewDelegate {
             return item
         case 2:
             let item = collectionView.dequeueReusableCell(withReuseIdentifier: CompositionTableViewCell.identifier, for: indexPath)
-            item.backgroundColor = .red
+//            item.backgroundColor = .red
             return item
         default:
             let item = collectionView.dequeueReusableCell(withReuseIdentifier: CompositionTableViewCell.identifier, for: indexPath)
-            item.backgroundColor = .red
+//            item.backgroundColor = .red
             return item
         }
     }
