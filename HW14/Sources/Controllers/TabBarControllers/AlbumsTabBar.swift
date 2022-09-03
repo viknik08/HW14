@@ -27,7 +27,7 @@ class AlbumsTabBar: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tabBarController?.title = "Albums"
+        title = "Albums"
         navigationController?.navigationBar.prefersLargeTitles = true
         setupHierarhy()
         setupLayout()

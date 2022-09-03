@@ -21,23 +21,23 @@ class TabBarViewController: UITabBarController {
     }
     
     func setupTabBarViewController() {
-        let first = LabraryTabBar()
+        let firstNavigationVC = UINavigationController(rootViewController: LabraryTabBar())
         let firstTabItem = UITabBarItem(title: "Labrary", image: UIImage(systemName: "photo.on.rectangle.fill"), selectedImage: UIImage(systemName: "photo.on.rectangle.fill"))
-        first.tabBarItem = firstTabItem
+        firstNavigationVC.tabBarItem = firstTabItem
         
-        let second = ForYouTabBar()
+        let secondNavigationVC = UINavigationController(rootViewController: ForYouTabBar())
         let secondTabItem = UITabBarItem(title: "For You", image: UIImage(systemName: "person.crop.rectangle.stack.fill"), selectedImage: UIImage(systemName: "person.crop.rectangle.stack.fill"))
-        second.tabBarItem = secondTabItem
+        secondNavigationVC.tabBarItem = secondTabItem
         
-        let third = AlbumsTabBar()
+        let thirdNavigationVC = UINavigationController(rootViewController: AlbumsTabBar())
         let thirdTabItem = UITabBarItem(title: "Albums", image: UIImage(systemName: "rectangle.stack.fill"), selectedImage: UIImage(systemName: "rectangle.stack.fill"))
-        third.tabBarItem = thirdTabItem
+        thirdNavigationVC.tabBarItem = thirdTabItem
         
-        let four = SearchTabBar()
+        let fourNavigationVC = UINavigationController(rootViewController: SearchTabBar())
         let fourTabItem = UITabBarItem(title: "Search", image: UIImage(systemName: "magnifyingglass"), selectedImage: UIImage(systemName: "magnifyingglass"))
-        four.tabBarItem = fourTabItem
+        fourNavigationVC.tabBarItem = fourTabItem
         
-        let controllers = [first, second, third, four]
+        let controllers = [firstNavigationVC, secondNavigationVC, thirdNavigationVC, fourNavigationVC]
         self.setViewControllers(controllers, animated: true)
     }
 }

@@ -16,6 +16,8 @@ class CompositionViewCell: UICollectionViewCell {
     private let mainImage: UIImageView = {
         let image = UIImageView()
         image.contentMode = .scaleAspectFit
+        image.clipsToBounds = true
+        image.layer.cornerRadius = 5
         return image
     }()
     
