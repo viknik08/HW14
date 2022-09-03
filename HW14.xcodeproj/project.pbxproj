@@ -18,6 +18,7 @@
 		BEEBF3F328C1D83000B9D46D /* SearchTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBF3F228C1D83000B9D46D /* SearchTabBar.swift */; };
 		BEEBF3F628C1E04C00B9D46D /* HeaderCompositionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBF3F528C1E04C00B9D46D /* HeaderCompositionCell.swift */; };
 		BEEBF3F928C1E3A800B9D46D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = BEEBF3F828C1E3A800B9D46D /* SnapKit */; };
+		BEEBF3FB28C1F13C00B9D46D /* CompositionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBF3FA28C1F13C00B9D46D /* CompositionTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		BEEBF3F028C1D80900B9D46D /* AlbumsTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsTabBar.swift; sourceTree = "<group>"; };
 		BEEBF3F228C1D83000B9D46D /* SearchTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTabBar.swift; sourceTree = "<group>"; };
 		BEEBF3F528C1E04C00B9D46D /* HeaderCompositionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCompositionCell.swift; sourceTree = "<group>"; };
+		BEEBF3FA28C1F13C00B9D46D /* CompositionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				BEEBF3D128C0EDC800B9D46D /* CompositionViewCell.swift */,
+				BEEBF3FA28C1F13C00B9D46D /* CompositionTableViewCell.swift */,
 			);
 			name = CompositionCell;
 			path = ../CompositionCell;
@@ -234,6 +237,7 @@
 				BEEBF3EA28C1D6D000B9D46D /* TabBarViewController.swift in Sources */,
 				BEEBF3EF28C1D7F400B9D46D /* ForYouTabBar.swift in Sources */,
 				BEEBF3D228C0EDC800B9D46D /* CompositionViewCell.swift in Sources */,
+				BEEBF3FB28C1F13C00B9D46D /* CompositionTableViewCell.swift in Sources */,
 				BEEBF3CE28C0EDC800B9D46D /* AppDelegate.swift in Sources */,
 				BEEBF3F628C1E04C00B9D46D /* HeaderCompositionCell.swift in Sources */,
 				BEEBF3D028C0EDC800B9D46D /* SceneDelegate.swift in Sources */,

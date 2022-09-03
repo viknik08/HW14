@@ -16,6 +16,7 @@ class AlbumsTabBar: UIViewController {
         let layout = creatLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(CompositionViewCell.self, forCellWithReuseIdentifier: CompositionViewCell.identifier)
+        collectionView.register(CompositionTableViewCell.self, forCellWithReuseIdentifier: CompositionTableViewCell.identifier)
         collectionView.dataSource = self
         collectionView.delegate = self
         return collectionView
@@ -25,8 +26,8 @@ class AlbumsTabBar: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        title = "Albums"
+        tabBarController?.title = "Albums"
+        navigationController?.navigationBar.prefersLargeTitles = true
         setupHierarhy()
         setupLayout()
 
@@ -51,18 +52,18 @@ class AlbumsTabBar: UIViewController {
             switch sectionIndex {
             case 0:
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
-                                                      heightDimension: .fractionalHeight(1))
+                                                      heightDimension: .fractionalWidth(1))
                 let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
                 
-                layoutItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
+                layoutItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 60, trailing: 5)
                 
                 let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1 / 2 ),
-                                                       heightDimension: .fractionalHeight(1 / 2 ))
+                                                       heightDimension: .fractionalWidth(1 / 2 * 2.6 ))
                 
                 let layoutGroup = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: layoutItem, count: 2)
                 
                 layoutGroup.interItemSpacing = NSCollectionLayoutSpacing.fixed(5)
-                layoutGroup.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 2.5, bottom: 0, trailing: 2.5)
+                layoutGroup.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 2.5, bottom: 20, trailing: 2.5)
                 
                 let sectionLayout = NSCollectionLayoutSection(group: layoutGroup)
                 sectionLayout.orthogonalScrollingBehavior = .groupPaging
@@ -75,7 +76,7 @@ class AlbumsTabBar: UIViewController {
                 layoutItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
 
                 let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
-                                                       heightDimension: .fractionalHeight(1 / 4))
+                                                       heightDimension: .fractionalHeight(1 / 3))
                 let layoutGroup = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: layoutItem, count: 2)
                 layoutGroup.interItemSpacing = NSCollectionLayoutSpacing.fixed(5)
                 layoutGroup.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 2.5, bottom: 0, trailing: 2.5)
@@ -152,11 +153,11 @@ extension AlbumsTabBar: UICollectionViewDataSource, UICollectionViewDelegate {
             item.backgroundColor = .gray
             return item
         case 2:
-            let item = collectionView.dequeueReusableCell(withReuseIdentifier: CompositionViewCell.identifier, for: indexPath)
+            let item = collectionView.dequeueReusableCell(withReuseIdentifier: CompositionTableViewCell.identifier, for: indexPath)
             item.backgroundColor = .red
             return item
         default:
-            let item = collectionView.dequeueReusableCell(withReuseIdentifier: CompositionViewCell.identifier, for: indexPath)
+            let item = collectionView.dequeueReusableCell(withReuseIdentifier: CompositionTableViewCell.identifier, for: indexPath)
             item.backgroundColor = .red
             return item
         }
