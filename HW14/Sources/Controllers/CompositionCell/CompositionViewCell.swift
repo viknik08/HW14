@@ -21,7 +21,7 @@ class CompositionViewCell: UICollectionViewCell {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.tintColor = .black
+        label.textColor = .black
         return label
     }()
     

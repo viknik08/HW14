@@ -21,7 +21,7 @@ extension Settings {
      Settings(title: "Favourites", image: "person4", count: "240", icon: nil),
      Settings(title: "WhtsApp", image: "person5", count: "2", icon: nil),
      Settings(title: "Instagram", image: "person3", count: "442", icon: nil),
-     Settings(title: "Family", image: "person5", count: "150", icon: nil),
+     Settings(title: "Family", image: "person", count: "150", icon: nil),
      Settings(title: "Me", image: "person4", count: "11", icon: nil)],
     
     [Settings(title: "People", image: "person4", count: "52", icon: nil),

@@ -135,6 +135,7 @@ class AlbumsTabBar: UIViewController {
                 layoutGroup.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 0)
                 let sectionLayout = NSCollectionLayoutSection(group: layoutGroup)
                 sectionLayout.boundarySupplementaryItems = [layoutSectionHeader]
+                sectionLayout.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0)
                 return sectionLayout
             }
         }
@@ -197,6 +198,10 @@ extension AlbumsTabBar: UICollectionViewDataSource, UICollectionViewDelegate {
             header.rightButton.isHidden = true
             return header
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("section \(indexPath.section) item \(indexPath.item)")
     }
 }
 
