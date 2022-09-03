@@ -13,31 +13,34 @@ class CompositionTableViewCell: UICollectionViewCell {
     
 //    MARK: - Outlets
     
-    lazy var icon: UIImageView = {
+    private let icon: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(systemName: "person")
-        
         return image
     }()
-    lazy var titleTypeLabel: UILabel = {
+    
+    private let titleTypeLabel: UILabel = {
         let label = UILabel()
         label.text = "title"
         label.textColor = .systemBlue
         label.font = UIFont.systemFont(ofSize: 18)
         return label
     }()
-    lazy var countLabel: UILabel = {
+    
+    private let countLabel: UILabel = {
         let label = UILabel()
         label.text = "10"
         label.textColor = .systemGray
         label.font = UIFont.systemFont(ofSize: 13)
         return label
     }()
+    
     private let detailIcon: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(systemName: "chevron.right", withConfiguration: UIImage.SymbolConfiguration(pointSize: 13))?.withTintColor(.systemGray, renderingMode: .alwaysOriginal)
         return image
     }()
+    
     private let view: UIView = {
         let view = UIView()
         view.backgroundColor = .gray
@@ -87,5 +90,11 @@ class CompositionTableViewCell: UICollectionViewCell {
             make.left.equalTo(self).offset(contentView.frame.width / 7)
             make.height.equalTo(0.2)
         }
+    }
+    
+    func configuration(model: Settings) {
+        self.titleTypeLabel.text = model.title
+        self.countLabel.text = model.count
+        self.icon.image = UIImage(systemName: model.icon ?? "")
     }
 }

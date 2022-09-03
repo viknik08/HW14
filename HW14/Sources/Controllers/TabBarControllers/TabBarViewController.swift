@@ -13,7 +13,6 @@ class TabBarViewController: UITabBarController {
         super.viewDidLoad()
         setupTabBarController()
         setupTabBarViewController()
-        
     }
     
     func setupTabBarController() {
@@ -40,6 +39,5 @@ class TabBarViewController: UITabBarController {
         
         let controllers = [first, second, third, four]
         self.setViewControllers(controllers, animated: true)
-        
     }
 }

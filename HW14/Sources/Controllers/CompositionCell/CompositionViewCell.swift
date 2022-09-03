@@ -12,42 +12,25 @@ class CompositionViewCell: UICollectionViewCell {
     static let identifier = "CompositionCell"
     
 //MARK: - Outlets
-    lazy var mainImage: UIImageView = {
+    
+    private let mainImage: UIImageView = {
         let image = UIImageView()
         image.contentMode = .scaleAspectFit
-        image.image = UIImage(named: "person")
         return image
     }()
-    lazy var titleLabel: UILabel = {
+    
+    private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Hello"
         label.tintColor = .black
         return label
     }()
-    lazy var countLabel: UILabel = {
+    
+    private let countLabel: UILabel = {
         let label = UILabel()
-        label.text = "Hello hello"
-        label.tintColor = .black
+        label.textColor = .systemGray
         return label
     }()
-    private let mainStack: UIStackView = {
-        let stack = UIStackView()
-        stack.axis = .vertical
-        stack.distribution = .fill
-//        stack.alignment = .center
-        return stack
-    }()
-    private let bottomStack: UIStackView = {
-        let stack = UIStackView()
-        stack.axis = .vertical
-        stack.distribution = .fill
-//        stack.alignment = .center
-//        stack.spacing = 2
-        return stack
-    }()
-    
-    
-    
+
 //MARK: - Init
     
     override init(frame: CGRect) {
@@ -63,39 +46,29 @@ class CompositionViewCell: UICollectionViewCell {
 //MARK: - Setup
 
     private func setupHierarhy() {
-//        addSubview(mainStack)
-//        mainStack.addArrangedSubview(mainImage)
-//        mainStack.addArrangedSubview(bottomStack)
-//        bottomStack.addArrangedSubview(titleLabel)
-//        bottomStack.addArrangedSubview(countLabel)
         addSubview(mainImage)
         addSubview(titleLabel)
         addSubview(countLabel)
-
     }
+    
     private func setupLayout() {
         mainImage.snp.makeConstraints { make in
             make.top.left.right.bottom.equalTo(self)
         }
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(mainImage.snp.bottom).offset(10)
-            make.left.equalTo(self).offset(10)
+            make.left.equalTo(self)
         }
         countLabel.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(10)
-            make.left.equalTo(self).offset(10)
+            make.top.equalTo(titleLabel.snp.bottom).offset(5)
+            make.left.equalTo(self)
         }
-        
-//        mainStack.snp.makeConstraints { make in
-//            make.width.equalTo(self)
-//            make.height.equalTo(self)
-//        }
-//        titleLabel.snp.makeConstraints { make in
-//            make.height.equalTo(50)
-//        }
-//        countLabel.snp.makeConstraints { make in
-//            make.height.equalTo(50)
-//        }
+    }
+    
+    func configuration(model: Settings) {
+        self.titleLabel.text = model.title
+        self.countLabel.text = model.count
+        self.mainImage.image = UIImage(named: model.image ?? "")
     }
     
     override func prepareForReuse() {

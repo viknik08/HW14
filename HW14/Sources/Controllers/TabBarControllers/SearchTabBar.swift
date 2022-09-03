@@ -12,7 +12,5 @@ class SearchTabBar: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .yellow
-
     }
-
 }
